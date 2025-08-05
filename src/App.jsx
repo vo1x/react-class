@@ -3,16 +3,27 @@ import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import { useState } from "react";
 
-function App(){
+import { Toaster } from "sonner";
 
+function App() {
   const [searchResults, setSearchResults] = useState([]);
-  
-  return <div className="min-h-screen">
-    {/* <Navbar></Navbar> */}
+  const [isLoading, setIsLoading] = useState(false);
 
-    <Searchbar setSearchResults={setSearchResults} />
-    <Home searchResults={searchResults}/>
-  </div>
+  return (
+    <>
+      <div className="min-h-screen ">
+        {/* <Navbar></Navbar> */}
+
+        <Searchbar
+          setSearchResults={setSearchResults}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
+        <Home searchResults={searchResults} isLoading={isLoading} />
+      </div>
+      <Toaster position="top-right" richColors={true}/>
+    </>
+  );
 }
 
 export default App;

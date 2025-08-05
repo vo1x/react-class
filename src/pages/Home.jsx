@@ -1,13 +1,17 @@
 import ResultCard from "../components/ResultCard";
 
-function Home(props) {
-  const { searchResults } = props;
+function Home({searchResults, isLoading}) {
+  // const { searchResults, isLoading } = props;
 
   return (
     <div className="flex flex-col gap-4">
-      {searchResults.map((result) => (
-        <ResultCard result={result} />
-      ))}
+      {isLoading ? (
+        <div>Loading search results..</div>
+      ) : searchResults?.length > 0 ? (
+        searchResults.map((result) => <ResultCard result={result} />)
+      ) : (
+        <div> No results found </div>
+      )}
     </div>
   );
 }

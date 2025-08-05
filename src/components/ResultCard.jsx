@@ -1,6 +1,8 @@
 function ResultCard(props){
     // const {id, title} = props.result;
 
+    
+
     const {result} = props;
     const {id, title, category} = result;
 
