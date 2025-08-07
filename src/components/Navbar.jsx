@@ -1,4 +1,5 @@
 import Searchbar from "./Searchbar";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const elements = ["Home", "Contact", "Cart", "Orders"];
@@ -10,11 +11,11 @@ function Navbar() {
     >
       <h1>Logo</h1>
       <Searchbar></Searchbar>
-      <ul className="flex items-center gap-4">
-        {elements.map((el) => (
-          <li>{el}</li>
-        ))}
-      </ul>
+      <div className="flex items-center gap-4">
+       <Link to={'/home'}>Home</Link>
+       <Link to={'/orders'}>Orders</Link>
+       <Link to={'/cart'}>Cart</Link>
+      </div>
     </div>
   );
 }

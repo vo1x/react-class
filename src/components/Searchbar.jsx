@@ -18,7 +18,7 @@ function Searchbar({ setSearchResults, isLoading, setIsLoading }) {
 
     try {
       setIsLoading(true);
-      const url = `https://dummyjsjjjon.com/products/search?q=${searchTerm}`;
+      const url = `https://dummyjson.com/products/search?q=${searchTerm}`;
       const response = await fetch(url);
 
       if (!response.ok) throw new Error("Error");
